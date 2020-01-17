@@ -8,40 +8,36 @@ body {
     background: #ccc;
 }
 
-#header {
-    background: black;
-    padding: 10px;
+nav {
+    border: 1px solid #c9c9c9;
+    border-radius: 8px;
+    box-shadow: 0px 1px 1px #ccc;
 }
 
-#header ul li {
+nav ul {
     list-style: none;
+    margin: 20px auto;
+}
+
+nav ul li {
     display: inline;
+    line-height: 40px;
     padding: 10px;
 }
 
-#header ul li a {
+nav ul li {
+    display: inline;
+    line-height: 40px;
+    padding: 10px;
+}
+
+nav ul li a {
     color: white;
     text-decoration: none;
-    padding: 10px;
-}
-
-#footer {
-    padding: 20px;
-    background: #ccc;
-}
-
-#main {
-    padding: 20px 0;
-    width: 500px;
-    margin: 0 auto;
-}
-
-.center {
-    text-align: center;
-}
-
-.error {
-    color: red;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 20px;
+    font-size: 20px;
 }
 
 table {
@@ -59,4 +55,120 @@ th {
 
 tr:nth-child(even) {
     background-color: red;
+}
+
+#header {
+    background: black;
+    padding: 10px;
+    text-align: center;
+}
+
+#blog {
+    width: 85%;
+    height: auto;
+    /* background: transparent; */
+    margin: 0 auto;
+    /* border: 1px solid black; */
+    color: white;
+    text-align: center;
+}
+
+#footer {
+    padding: 20px;
+    background: #ccc;
+}
+
+#main {
+    padding: 20px 0;
+    width: 500px;
+    margin: 0 auto;
+}
+
+
+/* contenedor */
+
+#content {
+    width: 85%;
+    min-height: 900px;
+    height: auto;
+    background: transparent;
+    margin: 0px auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    background: rgb(153, 170, 202);
+}
+
+
+/* estilos login */
+
+#asideLogin {
+    float: right;
+    width: 25%;
+    min-height: 900px;
+}
+
+
+/* entradas principal */
+
+#chief {
+    float: left;
+    width: 70%;
+    min-height: 900px;
+    background: rgb(238, 234, 234);
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px #ccc;
+    margin-left: 20px;
+    overflow: hidden;
+}
+
+#chief h1 {
+    font-size: 30px;
+    color: #444444;
+    letter-spacing: 1px;
+    text-shadow: 1px;
+}
+
+#chief h2 {
+    font-size: 20px;
+    color: #5d23e4;
+    letter-spacing: 1px;
+    margin-top: 25px;
+}
+
+#chief a {
+    color: #999999;
+    list-style: none;
+    text-decoration: none;
+}
+
+#chief p {
+    color: rgb(80, 71, 71);
+}
+
+
+/* ver entradas comments */
+
+#lookEntry a {
+    display: block;
+    border-radius: 2px;
+    padding: 15px;
+    color: white;
+    background: blue;
+    border: 1px solid #156785;
+    cursor: pointer;
+    width: 160px;
+    margin: 0px auto;
+    margin-top: 35px;
+}
+
+.center {
+    text-align: center;
+    font-size: 15px;
+    color: #5d23e4;
+    letter-spacing: 1px
+}
+
+.error {
+    color: red;
 }

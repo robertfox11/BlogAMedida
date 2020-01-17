@@ -11,12 +11,13 @@
 
 <body>
     <header id="header">
+        <h1 id="blog">Blog</h1>
         <nav>
             <ul>
-                <li><a href="main">Inicio</a></li>
-                <li><a href="nuevo">Nuevo</a></li>
-                <li><a href="consulta">Consulta</a></li>
-                <li><a href="name">Name</a></li>
+                <li><a href="home">home</a></li>
+                <li><a href="alimentation">Alimentation</a></li>
+                <li><a href="sport">Sport</a></li>
+                <li><a href="cars">Cars</a></li>
             </ul>
         </nav>
     </header>
@@ -50,37 +51,51 @@
         </aside>
         <!-- principal -->
         <div id="chief">
-            <h1>last entries</h1>
+            <!-- //titulos de enlaces -->
+            <h1>Last entries</h1>
             <!-- entradas -->
             <article class="entry">
-                <h2>Title</h2>
-                <p>
-                    Description
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam, mollitia quae blanditiis esse cupiditate vitae cumque vero dolorem nam aspernatur porro molestias sit. Aut id soluta vero? Aliquam, suscipit eos.
-                </p>
+                <a href="">
+                    <h2>Title</h2>
+                    <p>
+                        Description
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam, mollitia quae blanditiis esse cupiditate vitae cumque vero dolorem nam aspernatur porro molestias sit. Aut id soluta vero? Aliquam, suscipit eos.
+                    </p>
+                </a>
             </article>
             <article class="entry">
-                <h2>Title</h2>
-                <p>
-                    Description
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam, mollitia quae blanditiis esse cupiditate vitae cumque vero dolorem nam aspernatur porro molestias sit. Aut id soluta vero? Aliquam, suscipit eos.
-                </p>
+                <a href="">
+                    <h2>Title</h2>
+                    <p>
+                        Description
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam, mollitia quae blanditiis esse cupiditate vitae cumque vero dolorem nam aspernatur porro molestias sit. Aut id soluta vero? Aliquam, suscipit eos.
+                    </p>
+                </a>
             </article>
             <article class="entry">
-                <h2>Title</h2>
-                <p>
-                    Description
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam, mollitia quae blanditiis esse cupiditate vitae cumque vero dolorem nam aspernatur porro molestias sit. Aut id soluta vero? Aliquam, suscipit eos.
-                </p>
+                <a href="">
+                    <h2>Title</h2>
+                    <p>
+                        Description
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam, mollitia quae blanditiis esse cupiditate vitae cumque vero dolorem nam aspernatur porro molestias sit. Aut id soluta vero? Aliquam, suscipit eos.
+                    </p>
+                </a>
             </article>
             <article class="entry">
-                <h2>Title</h2>
-                <p>
-                    Description
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam, mollitia quae blanditiis esse cupiditate vitae cumque vero dolorem nam aspernatur porro molestias sit. Aut id soluta vero? Aliquam, suscipit eos.
-                </p>
+                <a href="">
+                    <h2>Title</h2>
+                    <p>
+                        Description
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam, mollitia quae blanditiis esse cupiditate vitae cumque vero dolorem nam aspernatur porro molestias sit. Aut id soluta vero? Aliquam, suscipit eos.
+                    </p>
+                </a>
             </article>
+            <!-- ver  entradas -->
+            <div id="lookEntry">
+                <a href="">Look All Entry</a>
+            </div>
         </div>
+
     </div>
     <footer id="footer">
         <p>Robert Salazar &copy; 2020</p>
