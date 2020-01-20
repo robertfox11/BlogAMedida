@@ -1,6 +1,5 @@
 <?php
-//auto load cargara los controladores
-    function ControllersAutoload ($classname){
+    function autoload ($classname){
         include_once 'controllers/'.$classname.'.php';
     }
 

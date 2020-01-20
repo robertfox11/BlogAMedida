@@ -11,7 +11,8 @@
                     <input type="submit" value="Entrar" />
                 </form>
             </div>
-            <div id="register" class="blockAside">
+        <?php  require_once 'views/user/register.php'?>
+            <!-- <div id="register" class="blockAside">
                 <h3>Register</h3>
                 <form action="register.php" method="POST">
                     <label for="name">Name</label>
@@ -24,7 +25,7 @@
                     <input type="password" name="password" />
                     <input type="submit" value="Entrar" />
                 </form>
-            </div>
+            </div> -->
         </aside>
         <!-- principal -->
         <div id="chief">
@@ -74,10 +75,3 @@
         </div>
 
     </div>
-    <footer id="footer">
-        <p>Robert Salazar &copy; 2020</p>
-    </footer>
-
-</body>
-
-</html>

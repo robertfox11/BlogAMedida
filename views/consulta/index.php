@@ -25,8 +25,6 @@
             
             ?>
         <tr>
-            
-            
             <td><?php echo $usuario->matricula ?></td>
             <td><?php echo $usuario->name ?></td>
             <td><?php echo $usuario->lastname ?></td>
