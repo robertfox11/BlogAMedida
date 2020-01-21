@@ -3,28 +3,17 @@ class Usuario{
     private $id;
     private $name;
     private $lastname;
-    private $email;
-    private $password;
-    private $date;   
-    private $database; 
+    private $email;  
+    private $db; 
 
-    public function __construct()
-    {
-        $this->database =Database::connect();
-    }    
-    /**
-     * Get the value of id
-     */ 
+    public function __construct() {
+		$this->db = Database::connect();
+	}
+
     public function getId()
     {
         return $this->id;
     }
-
-    /**
-     * Set the value of id
-     *
-     * @return  self
-     */ 
     public function setId($id)
     {
         $this->id = $id;
@@ -33,101 +22,55 @@ class Usuario{
     } 
     public function getName()
     {
-        return $this->name;
+        return  $this->name;
     }
 
-    /**
-     * Set the value of name
-     *
-     * @return  self
-     */ 
     public function setName($name)
     {
-        $this->name = $name;
-
-        return $this;
+        $this->name = $this->db->real_escape_string($name);
+        // $this->name = $name;
+        // return $this;
     }
-
-    /**
-     * Get the value of lastname
-     */ 
     public function getLastname()
     {
         return $this->lastname;
     }
-
-    /**
-     * Set the value of lastname
-     *
-     * @return  self
-     */ 
     public function setLastname($lastname)
     {
-        $this->lastname = $lastname;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of email
-     */ 
+        // $this->lastname = $lastname;
+        $this->lastname = $this->db->real_escape_string($lastname);
+        // return $this;
+    } 
     public function getEmail()
     {
         return $this->email;
     }
-
-    /**
-     * Set the value of email
-     *
-     * @return  self
-     */ 
     public function setEmail($email)
     {
-        $this->email = $email;
-
-        return $this;
+        $this->email = $this->db->real_escape_string($email);
+        // $this->email = $this->db->real_escape_string($email);
     }
-
-    /**
-     * Get the value of date
-     */ 
     public function getDate()
     {
         return $this->date;
     }
-
-    /**
-     * Set the value of date
-     *
-     * @return  self
-     */ 
     public function setDate($date)
     {
         $this->date = $date;
 
         return $this;
     }
-    public function getPassword()
-    {
-        return $this->password;
-    }
-
-    /**
-     * Set the value of password
-     *
-     * @return  self
-     */ 
-    public function setPassword($password)
-    {
-        $this->password = $password;
-
-        return $this;
-    }
-    public function save(){
-        $sql = "INSERT INTO usuarios VALUES('NULL', '{$this->getName()}', '{$this->getLastname()}', '{$this->getEmail()}','{$this->getPassword()}', '{$this->getdate()}')";
-        $save = $this->database->query($sql);
-    }
     
+    public function save(){
+        // try{
+        $sql = "INSERT INTO usuarios VALUES(NULL, '{$this->getName()}', '{$this->getLastname()}', '{$this->getEmail()}', NULL);";
+        $save = $this->db->query($sql);
+        $result = false;
+		if($save){
+			$result = true;
+		}
+		return $result;
+    }    
 }
 
 ?>

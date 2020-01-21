@@ -1,18 +1,17 @@
 <?php
 require_once 'autoload.php';
 require_once 'config/config.php';
+require_once 'config/DataBase.php';
 require_once 'views/layout/header.php';
 require_once 'views/layout/aside.php';
 require_once 'views/layout/footer.php';
 
-//conexion base de datos
-$database = Database::connect();
+
 
 function showError(){
 	$error = new ErrorController();
 	$error->index();
 }
-echo 'principal ';
 if(isset($_GET['controller'])){
 	$nombre_controlador = $_GET['controller'].'Controller';
 	var_dump($nombre_controlador);
