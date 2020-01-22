@@ -12,25 +12,6 @@ class UsuarioController {
     }
     public function saveUser(){
         //recoger datos
-        
-        // if (isset($_POST)) {
-        //     var_dump($_POST);
-        // }
-        // if (isset($_POST)) {
-        //         $usuario = new Usuario();
-        //         $usuario->setName($_POST['name']);
-        //         $usuario->setLastname($_POST['lastname']);
-        //         $usuario->setEmail($_POST['lastname']);
-        // $name = $_POST['name'];
-        // $lastname = $_POST['lastname'];
-        // $email = $_POST['email'];
-        // if($this->Usuario->save(['name' => $name, 'lastname' => $lastname, 'email' => $email])){
-        //     $mensaje = "Nuevo alumno creado";
-        // }else{
-        //     $mensaje ="Matricula ya existe";
-        // }
-        // $this->view->mensaje = $mensaje;
-        // $this->register();
  
         if (isset($_POST)) {
             $usuario = new Usuario();
@@ -49,7 +30,7 @@ class UsuarioController {
             $_SESSION['ragister'] = "failed";
             //si llega fallo
         }
-        header("location:".URL.'usuario/registro');
+        // header("Location:".URL.'usuario/register');
     }
 }
 ?>

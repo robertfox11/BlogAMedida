@@ -1,21 +1,11 @@
-<!-- 
-<h1>Register</h1>
-<form action="" method="POST">
-    <label for="name">Name</label>
-    <input type="text" name="name"/>
+<h1>Registrarse</h1>
 
-    <label for="lastname">Lastname</label>
-    <input type="text" name="lastname"/>
-
-    <label for="email">Email</label>
-    <input type="emal" name="email"/>
-
-    <label for="password">Password</label>
-    <input type="password" name="password"/>
-
-    <input type="submit" value="register">
-
-</form> -->
+<?php if(isset($_SESSION['register']) && $_SESSION['register'] == 'complete'): ?>
+	<strong class="alert_green">Registro completado correctamente</strong>
+<?php elseif(isset($_SESSION['register']) && $_SESSION['register'] == 'failed'): ?>
+	<strong class="alert_red">Registro fallido, introduce bien los datos</strong>
+<?php endif; ?>
+<?php Util::deleteSession('register'); ?>
 
 <div id="register" class="blockAside">
     <h3>Register</h3>
