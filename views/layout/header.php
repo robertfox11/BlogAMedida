@@ -14,10 +14,12 @@
         <h1 id="blog">Blog</h1>
         <nav>
             <ul>
+            
                 <li><a href="home">home</a></li>
                 <li><a href="alimentation">Alimentation</a></li>
                 <li><a href="sport">Sport</a></li>
                 <li><a href="cars">Cars</a></li>
+                <li><a href="<?=URL?>usuario/logout">Logout</a></li>
             </ul>
         </nav>
     </header>
