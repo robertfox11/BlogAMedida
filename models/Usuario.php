@@ -1,5 +1,6 @@
 <?php
-class Usuario{
+class Usuario {
+    
     private $id;
     private $name;
     private $lastname;
@@ -8,7 +9,8 @@ class Usuario{
 
     public function __construct() {
 		$this->db = Database::connect();
-	}
+    }
+   
 
     public function getId()
     {
@@ -29,7 +31,7 @@ class Usuario{
     {
         $this->name = $this->db->real_escape_string($name);
         // $this->name = $name;
-        // return $this;
+        return $this;
     }
     public function getLastname()
     {
@@ -48,28 +50,28 @@ class Usuario{
     public function setEmail($email)
     {
         $this->email = $this->db->real_escape_string($email);
+        
+        return $this;
         // $this->email = $this->db->real_escape_string($email);
     }
-    public function getDate()
-    {
-        return $this->date;
-    }
-    public function setDate($date)
-    {
-        $this->date = $date;
 
-        return $this;
-    }
     
     public function save(){
-        // try{
-        $sql = "INSERT INTO usuarios VALUES(NULL, '{$this->getName()}', '{$this->getLastname()}', '{$this->getEmail()}', NULL);";
+        $sql = "INSERT INTO usuarios VALUES(NULL, '{$this->getName()}', '{$this->getLastname()}', '{$this->getEmail()}');";
+        var_dump($sql);
         $save = $this->db->query($sql);
+        var_dump($save);
         $result = false;
 		if($save){
 			$result = true;
 		}
 		return $result;
+        // $save = $this->db->query($sql);
+        // $result = false;
+		// if($save){
+		// 	$result = true;
+		// }
+		// return $result;
     }    
 }
 
