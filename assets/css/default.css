@@ -212,6 +212,14 @@ input[type='submit'] {
     color: red;
 }
 
+.alert_green {
+    color: green;
+}
+
+.alert_red {
+    color: red;
+}
+
 footer {
     clear: both;
     margin: 0 auto;

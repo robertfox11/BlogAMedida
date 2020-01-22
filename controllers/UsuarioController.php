@@ -12,16 +12,25 @@ class UsuarioController {
     }
     public function saveUser(){
         //recoger datos
- 
         if (isset($_POST)) {
-            $usuario = new Usuario();
-            $usuario->setName($_POST['name']);
-            $usuario->setLastname($_POST['lastname']);
-            $usuario->setEmail($_POST['email']);
-            var_dump(($usuario));
-            $save =$usuario->save();
-            if ($save) {
-                $_SESSION['register'] ="registro Completado";
+            //condicion si en caso el nombre o variable existe validando
+            $name = isset($_POST['name']) ? $_POST['name'] : false;
+            $lastname = isset($_POST['lastname']) ? $_POST['lastname'] : false;
+            $email = isset($_POST['email']) ? $_POST['email'] : false;
+
+            if ($name && $lastname && $email) {
+               
+                $usuario = new Usuario();
+                $usuario->setName($name);
+                $usuario->setLastname($lastname);
+                $usuario->setEmail($email);
+                var_dump(($usuario));
+                $save =$usuario->save();
+                if ($save) {
+                    $_SESSION['register'] ="complete";
+                }else{
+                    $_SESSION['register']="failed";
+                }
             }else{
                 $_SESSION['register']="failed";
             }
@@ -33,4 +42,3 @@ class UsuarioController {
         // header("Location:".URL.'usuario/register');
     }
 }
-?>
