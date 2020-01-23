@@ -14,12 +14,15 @@
         <h1 id="blog">Blog</h1>
         <nav>
             <ul>
-            
-                <li><a href="home">home</a></li>
+           <?php if (isset($_SESSION['admin'])):?>
                 <li><a href="alimentation">Alimentation</a></li>
                 <li><a href="sport">Sport</a></li>
                 <li><a href="cars">Cars</a></li>
-                <li><a href="<?=URL?>usuario/logout">Logout</a></li>
+            <?php endif; ?>
+            <?php if (isset($_SESSION['identity'])):?> 
+                <li><a href="home">home</a></li>
+              <li><a href="<?=URL?>usuario/logout">Logout</a></li>
+              <?php endif; ?>
             </ul>
         </nav>
     </header>

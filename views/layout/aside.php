@@ -3,14 +3,15 @@
     <aside id="asideLogin">
         <div id="login" class="blockAside">
             <?php if (!isset($_SESSION['identity'])): ?>
-                <form action="<?= URL ?>usuario/login" method="POST">
-                    <label for="name">Name</label>
-                    <input type="name" name="name" />
+            <h3>Entrar en la Web</h3>
+                <form action="<?=URL?>usuario/login" method="POST">
+                    <!-- <label for="name">Name</label>
+                    <input type="name" name="name" /> -->
                     <label for="email">Email</label>
                     <input type="email" name="email" />
                     <input type="submit" value="Entrar" />
                 </form>
-            <?php else : ?>
+            <?php else:?>
                 <h3><?= $_SESSION['identity']->name ?> <?= $_SESSION['identity']->lastname ?></h3>
             <?php endif; ?>
         </div>
@@ -42,7 +43,7 @@
                 </p>
             </a>
         </article>
-        <?php if(isset($_SESSION['admin'])): ?>
+        <?php if(isset($_SESSION['identity'])): ?>
         <article class="entry">
             <a href="">
                 <h2>Title</h2>
@@ -53,7 +54,7 @@
             </a>
         </article>
         <?php endif; ?>
-        <?php if(isset($_SESSION['admin'])): ?>
+        <?php if(isset($_SESSION['identity'])): ?>
         <article class="entry">
             <a href="">
                 <h2>Title</h2>

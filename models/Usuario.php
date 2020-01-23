@@ -4,15 +4,13 @@ class Usuario {
     private $id;
     private $name;
     private $lastname;
-    private $email;  
-    // private $password;
+    private $email;
+    private $rol;
     private $db; 
 
     public function __construct() {
 		$this->db = Database::connect();
     }
-   
-
     public function getId()
     {
         return $this->id;
@@ -51,23 +49,20 @@ class Usuario {
     public function setEmail($email)
     {
         $this->email = $this->db->real_escape_string($email);
-        
-        // return $this;
-        // $this->email = $this->db->real_escape_string($email);
     }
-    // function getPassword() {
-	// 	return password_hash($this->db->real_escape_string($this->password), PASSWORD_BCRYPT, ['cost' => 4]);
-	// }
+    public function getRol()
+    {
+        return $this->rol;
+    }
+    public function setRol($rol)
+    {
+        $this->rol = $rol;
 
-    // function setPassword($password) {
-    //     $this->password = $password;
-    //     return $this;
-	// }
-
-    
+        return $this;
+    }
     public function save(){
-        $sql = "INSERT INTO usuarios VALUES(NULL, '{$this->getName()}', '{$this->getLastname()}', '{$this->getEmail()}');";
-        var_dump($sql);
+        $sql = "INSERT INTO usuarios VALUES(NULL, '{$this->getName()}', '{$this->getLastname()}', '{$this->getEmail()}', '{$this->getRol()}');";
+        // var_dump($sql);
         $save = $this->db->query($sql);
         var_dump($save);
         $result = false;
@@ -80,14 +75,14 @@ class Usuario {
 		$result = false;
 		$email = $usuario;
 		// $name = $this->name;
-		var_dump($email);
+		// var_dump($email);
 
         // Comprobar si existe el usuario
 		$sql = "SELECT * FROM usuarios WHERE email = '$email'";
         var_dump($sql);
         $login = $this->db->query($sql);
 		
-        var_dump($login);	
+        // var_dump($login);	
 		if($login && $login->num_rows == 1){
 			$usuario = $login->fetch_object();
 	
@@ -100,6 +95,7 @@ class Usuario {
 		
 		return $result;
     }
+    
 }
 
 ?>

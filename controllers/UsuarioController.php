@@ -25,7 +25,7 @@ class UsuarioController {
                 $usuario->setLastname($lastname);
                 $usuario->setEmail($email);
                 // $usuario->setPassword($password);
-                var_dump(($usuario));
+                // var_dump(($usuario));
                 $save =$usuario->save();
                 if ($save) {
                     $_SESSION['register'] ="complete";
@@ -40,34 +40,30 @@ class UsuarioController {
             $_SESSION['ragister'] = "failed";
             //si llega fallo
         }
-        header("Location:".URL);
+        // header("Location: /index.php",TRUE,301);
+        var_dump(header("Location:".URL."index"));
+
     }
     public function login(){
         #comprobar si existe el usuario
-       
         if (isset($_POST)) {
             # Identificar el usuario
             $usuario = new Usuario();
-            
-            // $usuario->setName($_POST['name']);
             $identity =$usuario->login($_POST['email']);
-            var_dump($identity);
-
             //mantener usuario identificado
             if($identity && is_object($identity)){
 				$_SESSION['identity'] = $identity;
 				//identificacion de administrador
-				// if($identity->rol == 'admin'){
-				// 	$_SESSION['admin'] = true;
-				// }
-				
+				if($identity->rol == 'admin'){
+					$_SESSION['admin'] = true;
+				}
 			}else{
 				$_SESSION['error_login'] = 'Identificación fallida !!';
-			}
-            die();
+            }
+            // var_dump(header("Location:".URL."index"));
+            // die();
         }
         header("Location:".URL);
-       
     }
     //logout
     public function logout(){
