@@ -21,7 +21,7 @@
             <?php endif; ?>
             <?php if (isset($_SESSION['identity'])):?> 
                 <li><a href="home">home</a></li>
-              <li><a href="<?=URL?>usuario/logout">Logout</a></li>
+                <li><a href="<?=URL?>usuario/logout">Logout</a></li>
               <?php endif; ?>
             </ul>
         </nav>

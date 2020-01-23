@@ -41,7 +41,7 @@ class UsuarioController {
             //si llega fallo
         }
         // header("Location: /index.php",TRUE,301);
-        var_dump(header("Location:".URL."index"));
+        header("Location:".URL."index");
 
     }
     public function login(){

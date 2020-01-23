@@ -220,16 +220,53 @@ input[type='submit'] {
     color: red;
 }
 
+.category {
+    text-decoration: none;
+    display: block;
+    padding: 8px;
+    margin: 5px;
+    font-weight: 400px;
+    font-size: 14px;
+    color: #ffffff;
+    background-color: #1883ba;
+    border-radius: 6px;
+    width: 130px;
+    border: 1px solid #0016b0;
+}
+
+.category-orange {
+    background: rgb(184, 135, 45);
+}
+
+.category-green {
+    background: rgb(152, 223, 152);
+}
+
+.category-blue {
+    background: rgb(143, 143, 211);
+}
+
 footer {
     clear: both;
     margin: 0 auto;
     background: lightcyan;
     width: 85%;
     border: 1px solid cadetblue;
-    border-bottom: none;
+    /* border-bottom: none; */
     border-radius: 8px;
     color: #666666;
     height: auto;
     padding: 15px;
     text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding: 20px;
+    padding-top: 0px;
 }
