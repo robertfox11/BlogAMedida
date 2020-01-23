@@ -8,6 +8,13 @@ public static function deleteSession($name){
 		
 		return $name;
 	}
+	public static function showCategory(){
+		require_once 'models/Category.php'; 
+		$category = new Categoria();
+		$categorys = $category->getCategory();
+		return $category;
+        
+	}
 // function getCategory()
 // {
 // 	$sql = "SELECT * FROM category ORDER BY id ASC;";

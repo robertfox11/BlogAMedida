@@ -2,13 +2,13 @@
 require_once 'models/Usuario.php';
 class UsuarioController {
     public function index(){
-        echo "estoy en el index";
-        require_once 'views/layout/index.php';
+        // echo "estoy en el index";
+        echo "Controlador Usuarios, Acción index";
+
     }
     public function register(){
         //Va esta guardado 
-        require_once 'views/user/register.php';
-
+        require 'views/user/register.php';
     }
     public function saveUser(){
         //recoger datos
