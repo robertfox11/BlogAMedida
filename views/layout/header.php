@@ -16,8 +16,13 @@
 		<nav id="menu">
 			<ul>
 				<li>
-					<a href="">Inicio</a>
+				<a href="<?= URL ?>">Inicio</a>
 				</li>
+				<?php while ($cat = $categorias->fetch_object()) : ?>
+					<li>
+						<a href="<?= URL ?>categoria/ver&id=<?= $cat->id ?>"><?= $cat->name ?></a>
+					</li>
+				<?php endwhile; ?>
 			</ul>
 		</nav>
        
