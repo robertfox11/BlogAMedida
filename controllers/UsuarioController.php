@@ -75,6 +75,5 @@ class UsuarioController {
         }
         header("Location:".URL);
     }
-
 }
 ?>

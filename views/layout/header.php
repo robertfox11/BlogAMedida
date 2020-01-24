@@ -12,18 +12,17 @@
 <body>
     <header id="header">
         <h1 id="blog">Blog</h1>
-        <?php $categorias = Util::showCategory(); ?>
+        <?php $categorys = Util::showCategory(); ?>
 		<nav id="menu">
 			<ul>
 				<li>
 				<a href="<?= URL ?>">Inicio</a>
 				</li>
-				<?php while ($cat = $categorias->fetch_object()) : ?>
+				<?php while ($cat = $categorys->fetch_object()) : ?>
 					<li>
-						<a href="<?= URL ?>categoria/ver&id=<?= $cat->id ?>"><?= $cat->name ?></a>
+						<a href="<?= URL ?>category/ver&id=<?= $cat->id ?>"><?= $cat->name ?></a>
 					</li>
 				<?php endwhile; ?>
 			</ul>
 		</nav>
-       
     </header>
