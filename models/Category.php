@@ -2,9 +2,10 @@
 class Categoria {
     private $id;
     private $name;
+    private $db;
 
     public function __construct() {
-		$this->db = Database::connect();
+        $this->db = Database::connect();
     }
 
     public function getId()
@@ -31,13 +32,8 @@ class Categoria {
         return $this;
     }
     public function getCategory(){
-        $sql = "SELECT * FROM category ORDER BY id ASC";
-        $category = $this->db->query($sql);
-        $results = array();
-        if ($category && mysqli_num_rows($category) >= 1) {
-            $results = $category;
-        }
-        return $results;
+        $categorias = $this->db->query("SELECT * FROM category ORDER BY id DESC;");
+		return $categorias;
     }
 }
 ?>
