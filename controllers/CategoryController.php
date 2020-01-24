@@ -8,5 +8,11 @@ class CategoryController{
  
         require_once 'views/category/index.php';
     }
+    public function entry(){
+        require_once 'views/category/entry.php';
+    }
+    public function saveCategory(){
+        
+    }
 }
 ?>

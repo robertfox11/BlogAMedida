@@ -9,14 +9,16 @@
                     <input type="email" name="email" />
                     <input type="submit" value="Entrar" />
                 </form>
+            <?php else : ?>
+            <h3><?= $_SESSION['identity']->name ?> <?= $_SESSION['identity']->lastname ?></h3>
+            <?php endif; ?>
                 <div>
-                    <a href="" class="category category-blue">Crear Entradas</a>
+                <?php if (isset($_SESSION['admin'])) : ?>
+                    <a href="<?=URL?>category/entry" class="category category-blue">Crear Entradas</a>
                     <a href="" class="category category-green">Crear Category</a>
+                <?php endif; ?>
                     <a href="" class="category category-orange">Mis Datos</a>
                 </div>
-            <?php else : ?>
-                <h3><?= $_SESSION['identity']->name ?> <?= $_SESSION['identity']->lastname ?></h3>
-            <?php endif; ?>
         </div>
     </aside>
     <!-- principal -->
@@ -67,4 +69,3 @@
             </article> -->
         
         <!-- ver  entradas -->
-       

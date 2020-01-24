@@ -18,15 +18,6 @@
 				<li>
 					<a href="">Inicio</a>
 				</li>
-				<li>
-					<a href="">Inicio</a>
-				</li>
-				<li>
-					<a href="">Inicio</a>
-				</li>
-				<li>
-					<a href="">Inicio</a>
-				</li>
 				<li><a href="<?=URL?>usuario/logout">Logout</a></li>
 				
 			</ul>
