@@ -8,13 +8,22 @@ public static function deleteSession($name){
 		
 		return $name;
 	}
+//function to admin 
+	public static function isAdmin(){
+		if(!isset($_SESSION['admin'])){
+			header("Location:".URL);
+		}else{
+			return true;
+		}
+	}
 	public static function showCategory(){
 		require_once 'models/Category.php'; 
 		$category = new Categoria();
 		$categorys = $category->getCategory();
-		return $category;
+		return $categorys;
         
 	}
+
 // function getCategory()
 // {
 // 	$sql = "SELECT * FROM category ORDER BY id ASC;";

@@ -4,7 +4,6 @@ class UsuarioController {
     public function index(){
         // echo "estoy en el index";
         echo "Controlador Usuarios, Acción index";
-
     }
     public function register(){
         //Va esta guardado 
@@ -18,7 +17,6 @@ class UsuarioController {
             $lastname = isset($_POST['lastname']) ? $_POST['lastname'] : false;
             $email = isset($_POST['email']) ? $_POST['email'] : false;
             // $password = isset($_POST['password']) ? $_POST['password'] : false;
-
             if ($name && $lastname && $email) {
                 $usuario = new Usuario();
                 $usuario->setName($name);
@@ -41,7 +39,7 @@ class UsuarioController {
             //si llega fallo
         }
         // header("Location: /index.php",TRUE,301);
-        header("Location:".URL."index");
+        header("Location:".URL."usuario/register");
 
     }
     public function login(){
@@ -76,7 +74,6 @@ class UsuarioController {
             unset($_SESSION['admin']);
         }
         header("Location:".URL);
-
     }
 
 }

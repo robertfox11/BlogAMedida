@@ -8,7 +8,7 @@
 
 <div id="register" class="blockAside">
     <!-- index.php?controller=usuario&action=saveUser -->
-    <form action="<?=URL?>usuario/register" method="POST">
+    <form action="<?=URL?>usuario/saveUser" method="POST">
         <label for="name">Name</label>
         <input type="name" name="name" required/>
         <label for="lastname">LastName</label>

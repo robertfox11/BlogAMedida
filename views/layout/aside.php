@@ -10,25 +10,31 @@
                     <input type="submit" value="Entrar" />
                 </form>
             <?php else : ?>
-            <h3><?= $_SESSION['identity']->name ?> <?= $_SESSION['identity']->lastname ?></h3>
+                <h3><?= $_SESSION['identity']->name ?> <?= $_SESSION['identity']->lastname ?></h3>
             <?php endif; ?>
-                <div>
+            <div>
                 <?php if (isset($_SESSION['admin'])) : ?>
-                    <a href="<?=URL?>category/entry" class="category category-blue">Crear Entradas</a>
+                    <a href="<?= URL ?>category/entry" class="category category-blue">Crear Entradas</a>
                     <a href="" class="category category-green">Crear Category</a>
                 <?php endif; ?>
+                <?php if (isset($_SESSION['identity'])) : ?>
+                    <a class="category category-blue" href="<?= URL ?>usuario/logout">Logout</a>
                     <a href="" class="category category-orange">Mis Datos</a>
-                </div>
+                <?php else : ?>
+                    <a href="<?= URL ?>usuario/register">Registrese aqui</a>
+                <?php endif; ?>
+
+            </div>
         </div>
     </aside>
     <!-- principal -->
     <div id="chief">
         <!-- //titulos de enlaces -->
 
-        
+
         <!-- entradas -->
-        
-            <!-- <article class="entry">
+
+        <!-- <article class="entry">
                 <a href="">
                     <h2>Title</h2>
                     <p>
@@ -67,5 +73,7 @@
                     </p>
                 </a>
             </article> -->
-        
+
         <!-- ver  entradas -->
+                <!-- //titulos de enlaces -->
+
