@@ -78,7 +78,7 @@ class Comments {
     }
     public function getComments(){
         //Conseguiremos las entradas como category
-        $sql = "SELECT e.*, c.name AS 'categoria' FROM comments e INNER JOIN category c ON e.categoria_id = c.id ORDER BY e.id DESC LIMIT 4";
+        $sql = "SELECT e.*, c.name AS 'categoriaName' FROM comments e INNER JOIN category c ON e.categoria_id = c.id ORDER BY e.id DESC LIMIT 5";
         // var_dump($sql);
         $comments = $this->db->query($sql);
         return $comments;

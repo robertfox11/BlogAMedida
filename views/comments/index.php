@@ -4,7 +4,7 @@
 <article class="entry">
     <a href="<?=URL?>comments/ver&id">
         <h2><?=$com->titulo?></h2>
-        <span><?=$com->name.' | '.$com->fecha?></span>
+        <span><?=$com->categoriaName.' | '.$com->fecha?></span>
         <p><?=$com->descripcion?></p>
     </a>
 </article>
