@@ -7,7 +7,6 @@ class Categoria {
     public function __construct() {
         $this->db = Database::connect();
     }
-
     public function getId()
     {
         return $this->id;
@@ -19,7 +18,6 @@ class Categoria {
 
         return $this;
     }
-
     public function getName()
     {
         return $this->name;
@@ -32,7 +30,9 @@ class Categoria {
         return $this;
     }
     public function getCategory(){
-        $categorias = $this->db->query("SELECT * FROM category ORDER BY id DESC;");
+        $sql= "SELECT * FROM category ORDER BY id DESC;";
+        $categorias = $this->db->query($sql);
+        // ("SELECT * FROM category ORDER BY id DESC;");
 		return $categorias;
     }
     public function saveCategory()

@@ -6,7 +6,6 @@ class CategoryController{
         $category = new Categoria();
         $categorys = $category->getCategory();
         // var_dump($categorys);
- 
         require_once 'views/category/index.php';
     }
     public function entry(){

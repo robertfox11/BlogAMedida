@@ -74,10 +74,7 @@ class Usuario {
     public function login($usuario){
 		$result = false;
 		$email = $usuario;
-		// $name = $this->name;
-		// var_dump($email);
-
-        // Comprobar si existe el usuario
+	    // Comprobar si existe el usuario
 		$sql = "SELECT * FROM usuarios WHERE email = '$email'";
         var_dump($sql);
         $login = $this->db->query($sql);
