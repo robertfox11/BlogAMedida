@@ -16,7 +16,6 @@ class UsuarioController {
             $name = isset($_POST['name']) ? $_POST['name'] : false;
             $lastname = isset($_POST['lastname']) ? $_POST['lastname'] : false;
             $email = isset($_POST['email']) ? $_POST['email'] : false;
-            // $password = isset($_POST['password']) ? $_POST['password'] : false;
             if ($name && $lastname && $email) {
                 $usuario = new Usuario();
                 $usuario->setName($name);

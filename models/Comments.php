@@ -27,9 +27,8 @@ class Comments {
     }
     public function setUsuario_id($usuario_id)
     {
-        $this->usuario_id = $usuario_id;
-
-        return $this;
+        $this->usuario_id = $this->db->real_escape_string($usuario_id);
+        // return $this;
     }
     public function getCategoria_id()
     {
@@ -37,7 +36,7 @@ class Comments {
     }
     public function setCategoria_id($categoria_id)
     {
-        $this->categoria_id = $categoria_id;
+        $this->categoria_id = $this->db->real_escape_string($categoria_id);
         return $this;
     }
     public function getTitulo()
@@ -46,8 +45,8 @@ class Comments {
     } 
     public function setTitulo($titulo)
     {
-        $this->titulo = $titulo;
-        return $this;
+        $this->titulo = $this->db->real_escape_string($titulo);
+        // return $this;
     }
     public function getDescripcion()
     {
@@ -55,8 +54,7 @@ class Comments {
     }
     public function setDescripcion($descripcion)
     {
-        $this->descripcion = $descripcion;
-        return $this;
+        $this->descripcion = $this->db->real_escape_string($descripcion);
     }
     public function getFecha()
     {
@@ -82,6 +80,20 @@ class Comments {
         // var_dump($sql);
         $comments = $this->db->query($sql);
         return $comments;
+    }
+    public function saveComment()
+    {
+        $sql ="INSERT INTO comments VALUES(NULL, NULL, '{$this->getCategoria_id()}','{$this->getTitulo()}','{$this->getDescripcion()}', CURDATE());";
+        var_dump($sql);
+        // die();
+        $save = $this->db->query($sql);
+        
+        $result = false;
+		if($save){
+            $result = true;
+            var_dump($result);
+		}
+		return $result;
     }
 }
 ?>

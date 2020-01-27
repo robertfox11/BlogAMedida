@@ -76,7 +76,7 @@ class Usuario {
 		$email = $usuario;
 	    // Comprobar si existe el usuario
 		$sql = "SELECT * FROM usuarios WHERE email = '$email'";
-        var_dump($sql);
+        // var_dump($sql);
         $login = $this->db->query($sql);
 		
         // var_dump($login);	

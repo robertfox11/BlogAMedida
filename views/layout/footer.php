@@ -1,6 +1,6 @@
-<h1>Last entries</h1>
+
 <div id="lookEntry">
-            <a href="">Look All Entry</a>
+            <a href="">Create Comments</a>
         </div>
 </div>
 
