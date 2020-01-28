@@ -15,35 +15,31 @@ class CommentsController{
     public function saveComments(){
         //usuario guardar Comments
         // Util::isAdmin();
-        if (isset($_POST)){
+        if (isset($_SESSION['identity'])){
+            $usuario_id = $_SESSION['identity']->id;
             $categoria_id = isset($_POST['categoria_id']) ? $_POST['categoria_id'] : false;
             $titulo = isset($_POST['titulo']) ? $_POST['titulo'] : false;
-            $descripcion = isset($_POST['descripcion']) ? $_POST['descripcion'] : false;        
+            $descripcion = isset($_POST['descripcion']) ? $_POST['descripcion'] : false;   
             // Guardar la categoria en bd
-            echo "has Guardado";
-            if ($categoria_id && $titulo && $descripcion) {
+            if ($categoria_id && $titulo && $descripcion && $usuario_id ) {
                 $comments = new Comments();
+                $comments->setUsuario_id($usuario_id);
                 $comments->setCategoria_id($categoria_id);
                 $comments->setTitulo($titulo);
                 $comments->setDescripcion($descripcion);
-
-                var_dump($comments);
-                
                 $save = $comments->saveComment();
-                var_dump($save);
                 if ($save) {
-                    $_SESSION['register'] ="complete";
+                    $_SESSION['comment'] ="complete";
                 }else{
-                    $_SESSION['register']="failed";
+                    $_SESSION['comment']="failed";
                 }
             }else{
-                $_SESSION['register']="failed";
+                $_SESSION['comment']="failed";
             }
         }else{
-            $_SESSION['ragister'] = "failed";
-            //si llega fallo
+            $_SESSION['comment'] = "failed";
         }
-        // header("Location:".URL."comments/index");
+        header("Location:".URL);
     }
 }
 ?>

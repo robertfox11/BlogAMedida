@@ -37,7 +37,7 @@ class Comments {
     public function setCategoria_id($categoria_id)
     {
         $this->categoria_id = $this->db->real_escape_string($categoria_id);
-        return $this;
+        // return $this;
     }
     public function getTitulo()
     {
@@ -76,6 +76,13 @@ class Comments {
     }
     public function getComments(){
         //Conseguiremos las entradas como category
+        // private $id;
+        // private $usuario_id;
+        // private $categoria_id;
+        // private $titulo;
+        // private $descripcion;
+        // private $fecha;
+        // private $db;
         $sql = "SELECT e.*, c.name AS 'categoriaName' FROM comments e INNER JOIN category c ON e.categoria_id = c.id ORDER BY e.id DESC LIMIT 5";
         // var_dump($sql);
         $comments = $this->db->query($sql);
@@ -83,15 +90,14 @@ class Comments {
     }
     public function saveComment()
     {
-        $sql ="INSERT INTO comments VALUES(NULL, NULL, '{$this->getCategoria_id()}','{$this->getTitulo()}','{$this->getDescripcion()}', CURDATE());";
+        $sql ="INSERT INTO comments VALUES(NULL, {$this->getUsuario_id()},{$this->getCategoria_id()} ,'{$this->getTitulo()}','{$this->getDescripcion()}', CURDATE());";
         var_dump($sql);
-        // die();
         $save = $this->db->query($sql);
-        
+        echo $this->db->error;
         $result = false;
 		if($save){
             $result = true;
-            var_dump($result);
+
 		}
 		return $result;
     }
