@@ -1,12 +1,5 @@
 <h1>Crear Comments</h1>
 <p>Añade nuevas entradas al blog para que puedan leerlas y disfrutarlas</p>
-<?php if (isset($_SESSION['comment']) && $_SESSION['comment'] == 'complete') : ?>
-    <strong class=".alert_green">Registro completado correctamente</strong>
-<?php elseif (isset($_SESSION['comment']) && $_SESSION['comment'] == 'failed') : ?>
-    <strong class="alert_red">Registro fallido, introduce bien los datos</strong>
-<?php endif; ?>
-<?php Util::deleteSession('register'); ?>
-
 <?php $comments = Util::showComments(); ?>
 <div id="register">
     <form action="<?= URL ?>comments/saveComments" method="POST">

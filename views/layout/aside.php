@@ -14,7 +14,10 @@
             <?php endif; ?>
             <div>
                 <?php if (isset($_SESSION['admin'])) : ?>
-                    <a href="<?= URL ?>category/entry" class="category category-blue">Crear Entradas Category</a>
+                    <a href="<?= URL ?>category/entry" class="category category-blue">Crear Category</a>
+                    <a href="<?= URL ?>category/index" class="category category-blue">Show Category</a>
+                    
+                    <a href="<?= URL ?>comments/index" class="category category-green">Editar Comemnts Category</a>
                 <?php endif; ?>
                 <?php if (isset($_SESSION['identity'])) : ?>
                     <a href="<?= URL ?>comments/entry" class="category category-green">Crear Comments</a>

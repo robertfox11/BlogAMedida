@@ -23,5 +23,30 @@ class CategoryController{
 		}
         header("Location:".URL."category/index");
     }
+    public function updateCategory(){
+        Util::isAdmin();
+        if (isset($_GET['id'])) {
+            
+        }
+        
+    }
+    public function deleteCategory(){
+        var_dump($_GET);
+        Util::isAdmin();
+        $id = $_GET['id'];
+        if (isset($_GET['id'])) {
+            $delete = new Categoria();
+            $delete->setId($id);
+            $deletes = $delete->deleteCategory();
+            if ($deletes) {
+                $_SESSION['delete'] = 'complete';
+            }else{
+                $_SESSION['delete'] ='failed';
+            }
+        }else{
+            $_SESSION['delete'] ='failed';
+        }
+        header('Location:'.URL.'category/index');
+    }
 }
 ?>
