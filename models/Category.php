@@ -32,7 +32,6 @@ class Categoria {
     public function getCategory(){
         $sql= "SELECT * FROM category ORDER BY id DESC;";
         $categorias = $this->db->query($sql);
-        // ("SELECT * FROM category ORDER BY id DESC;");
 		return $categorias;
     }
     public function saveCategory()

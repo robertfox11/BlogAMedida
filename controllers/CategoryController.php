@@ -31,7 +31,6 @@ class CategoryController{
         
     }
     public function deleteCategory(){
-        var_dump($_GET);
         Util::isAdmin();
         $id = $_GET['id'];
         if (isset($_GET['id'])) {
