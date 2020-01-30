@@ -1,5 +1,11 @@
-<h1>Crear Comments</h1>
-<p>Añade nuevas entradas al blog para que puedan leerlas y disfrutarlas</p>
+<?php if (isset($edit)) : ?>
+    <h1>Editar Comments</h1>
+<?php else : ?>
+    <h1>Crear Comments</h1>
+    <p>Añade nuevas entradas al blog para que puedan leerlas y disfrutarlas</p>
+<?php endif ?>
+
+
 <?php $comments = Util::showComments(); ?>
 <div id="register">
     <form action="<?= URL ?>comments/saveComments" method="POST">

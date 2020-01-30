@@ -7,7 +7,7 @@
             <span><?= $com->categoriaName . ' | ' . $com->fecha ?></span>
             <p><?= $com->descripcion ?></p>
         </a>
-            <a href="<?= URL ?>comments/updateCategory&id=<?= $com->id; ?>"" class=" button button-small category category-green">Editar</a>
+            <a href="<?= URL ?>comments/updateComments&id=<?= $com->id; ?>"" class=" button button-small category category-green">Editar</a>
             <a href="<?= URL ?>comments/deleteComments&id=<?= $com->id; ?>" class="button button-small category category-blue">Delete</a>
     </article>
 <?php endwhile; ?>

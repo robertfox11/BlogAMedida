@@ -25,10 +25,15 @@ class CategoryController{
     }
     public function updateCategory(){
         Util::isAdmin();
+        //validation
         if (isset($_GET['id'])) {
-            
+            $id= $_GET['id'];
+            $edit = true;
+            $update = new Categoria();
+            $update->setId($id);
+            $upd =$update->getOneCategory();
         }
-        
+        require_once  'views/category/entry.php';
     }
     public function deleteCategory(){
         Util::isAdmin();

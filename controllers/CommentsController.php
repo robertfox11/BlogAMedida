@@ -58,5 +58,14 @@ class CommentsController{
         }
         header('Location:'.URL.'comments/index');
     }
+    public function updateComments(){
+        Util::isAdmin();
+        $edit = true;
+        //validation
+        if (isset($_GET['id'])) {
+            
+        }
+        require_once 'views/comments/entry.php';
+    }
 }
 ?>
