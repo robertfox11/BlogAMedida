@@ -41,5 +41,22 @@ class CommentsController{
         }
         header("Location:".URL);
     }
+    public function deleteComments(){
+        Util::isAdmin();
+        $id = $_GET['id'];
+        if (isset($_GET['id'])) {
+            $delete = new Comments();
+            $delete->setId($id);
+            $deletes = $delete->deleteComment();
+            if ($deletes) {
+                $_SESSION['delete'] = 'complete';
+            }else{
+                $_SESSION['delete'] ='failed';
+            }
+        }else{
+            $_SESSION['delete'] ='failed';
+        }
+        header('Location:'.URL.'comments/index');
+    }
 }
 ?>

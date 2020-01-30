@@ -101,5 +101,14 @@ class Comments {
 		}
 		return $result;
     }
+    public function deleteComment(){
+        $sql = "DELETE FROM comments WHERE id={$this->id}";
+        $delete = $this->db->query($sql);
+        $result = false;
+		if($delete){
+			$result = true;
+		}
+		return $result;
+    }
 }
 ?>
