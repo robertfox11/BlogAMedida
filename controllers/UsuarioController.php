@@ -22,7 +22,7 @@ class UsuarioController {
                 $usuario->setLastname($lastname);
                 $usuario->setEmail($email);
                 // $usuario->setPassword($password);
-                // var_dump(($usuario));
+                var_dump(($usuario));
                 $save =$usuario->save();
                 if ($save) {
                     $_SESSION['register'] ="complete";

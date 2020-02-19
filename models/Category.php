@@ -42,8 +42,9 @@ class Categoria {
     public function saveCategory()
     {
         $sql ="INSERT INTO category VALUES(NULL, '{$this->getName()}');";
+        var_dump($sql);
         $save = $this->db->query($sql);
-        // var_dump($save);
+        var_dump($save);
         $result = false;
 		if($save){
 			$result = true;
