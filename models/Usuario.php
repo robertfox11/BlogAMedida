@@ -62,7 +62,7 @@ class Usuario {
     }
     public function save(){
         $sql = "INSERT INTO usuarios VALUES(NULL, '{$this->getName()}', '{$this->getLastname()}', '{$this->getEmail()}', '{$this->getRol()}');";
-        // var_dump($sql);
+        var_dump($sql);
         $save = $this->db->query($sql);
         var_dump($save);
         $result = false;

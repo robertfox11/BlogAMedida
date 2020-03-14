@@ -1,4 +1,4 @@
-<div id="content">
+<main id="content">
     <!-- lateral -->
     <aside id="asideLogin">
         <div id="login" class="blockAside">
@@ -11,7 +11,7 @@
                 </form>
             <?php else : ?>
                 <h3><?= $_SESSION['identity']->name ?> <?= $_SESSION['identity']->lastname ?></h3>
-            <?php endif; ?>
+            <?php endif; ?> 
             <div>
                 <?php if (isset($_SESSION['admin'])) : ?>
                     <a href="<?= URL ?>category/entry" class="category category-blue">Crear Category</a>

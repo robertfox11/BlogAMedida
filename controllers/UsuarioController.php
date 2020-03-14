@@ -38,7 +38,7 @@ class UsuarioController {
             //si llega fallo
         }
         // header("Location: /index.php",TRUE,301);
-        header("Location:".URL."usuario/register");
+        // header("Location:".URL."usuario/register");
 
     }
     public function login(){

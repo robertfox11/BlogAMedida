@@ -1,7 +1,6 @@
-
 <div id="lookEntry">
-            <a href="<?= URL ?>comments/entry">Create Comments</a>
-        </div>
+    <a href="<?= URL ?>comments/entry">Create Comments</a>
+</div>
 </div>
 
 </div>

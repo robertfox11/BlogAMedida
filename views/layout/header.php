@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="<?= URL ?>assets/css/default.css">
     <title></title>
 </head>
-
 <body>
     <header id="header">
         <h1 id="blog">Blog</h1>
